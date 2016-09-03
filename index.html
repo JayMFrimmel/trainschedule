@@ -111,7 +111,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="panel-heading" id="addATrain">
 					<h3>Add a Train</h3>
 				</div>
 				<div class="panel-body">
@@ -138,7 +138,34 @@
 			</div>
 		</div>
 	</div>
+<!-- latest compiled and minified css & js -->
+<script src="https://code.jquery.com/jquery.js">
+</script>
 
+<script>
+
+// capture button click
+	$("#addtrainName").on("click", function() {
+
+		//Capture user inputs and store into variables
+		var name = $('#trainNameinput').val().trim();
+		var name = $('trainDestinationinput').val().trim();
+		var name = $('firstTrainTimeinput').val().trim();
+		var name = $('trainFrequencyinput').val().trim();
+
+		// console log each of the inputs to confirm receiving them
+
+		console.log(trainName);
+		console.log(trainDestination);
+		console.log(firstTrainTime);
+		console.log(trainFrequency);
+
+		// Replaces content in the "Add a Train" form
+		$("#addATrain").empty();
+		
+
+	}
+</script>
 </body>
 
 </script>
