@@ -144,14 +144,36 @@
 
 <script>
 
+// Initialize Firebase
+
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAD2WNWsoufMGJpHDwvHcKlgZNzbBZiQJs",
+    authDomain: "trainschedule-d316f.firebaseapp.com",
+    databaseURL: "https://trainschedule-d316f.firebaseio.com",
+    storageBucket: "trainschedule-d316f.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+var dataRef = firebase.database();
+
+
+// Initial Values
+var trainName = "";
+var trainDestination = "";
+var firstTrainTime = 0;
+var trainFrequency = "";
+
 // capture button click
 	$("#addtrainName").on("click", function() {
 
 		//Capture user inputs and store into variables
-		var name = $('#trainNameinput').val().trim();
-		var name = $('trainDestinationinput').val().trim();
-		var name = $('firstTrainTimeinput').val().trim();
-		var name = $('trainFrequencyinput').val().trim();
+		trainName = $('#trainNameinput').val().trim();
+		trainDestination = $('trainDestinationinput').val().trim();
+		firstTrainTime = $('firstTrainTimeinput').val().trim();
+		trainFrequency = $('trainFrequencyinput').val().trim();
 
 		// console log each of the inputs to confirm receiving them
 
@@ -190,7 +212,7 @@
 		$("#addATrain").append("<h4>" + localStorage.getItem("firstTrainTime"));
 		$("#addATrain").append("<h4>" + localStorage.getItem("trainFrequency"));
 	// <--------------------------------------------
-	
+</script>
 </script>
 </body>
 
