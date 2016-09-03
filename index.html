@@ -25,6 +25,10 @@
 
 	<!-- javascript app -->
 	<script type="text/javascript" src="assets/javascript/schedule.js"></script>
+	<!-- Firebase Reference -->
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+
 </head>
 <body>
      <!-- banner for schedule -->
@@ -37,7 +41,7 @@
 
 	<!-- table listing trains, stops and times -->
 	<div class="container">
-		<table class="table">
+		<table class="table table-striped">
 			<h2>Current Train Schedule</h2>
 		<thead>
 			<tr>
@@ -53,59 +57,89 @@
 				<tr>
 					<td>Trojan Special</td>
 					<td>Greensboro</td>
-					<td></td>
-					<td></td>
+					<td>53</td>
+					<td>1630</td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Tarheel Express</td>
 					<td>Chapel Hill</td>
-					<td></td>
+					<td>25</td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Blue Devil</td>
 					<td>Durham</td>
-					<td></td>
+					<td>26</td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Sea Hawk Special</td>
 					<td>Wilmington</td>
-					<td></td>
+					<td>150</td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Broncos Limited</td><td>Fayetteville</td>
-					<td></td>
+					<td>102</td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Wolfpack Howler</td>
 					<td>Raleigh</td>
-					<td></td>
+					<td>45</td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Piedmont Zephyr</td>
 					<td>Charlotte</td>
-					<td></td>
+					<td>131</td>
 					<td></td>
 					<td></td>
 				</tr>
-				
-			<!-- minutes to arrival -->
-
-
 			</tbody>
 		</thead>
 		</table>
 	</div>
 
+	<!-- enter new trains -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>Add a Train</h3>
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label for="trainName">Train Name</label>
+							<input type="text" class="form-control" id="trainName">
+						</div>
+						<div class="form-group">
+							<label for="trainDestination">Destination</label>
+							<input type="text" class="form-control" id="trainDestination">
+						</div>
+						<div class="form-group">
+							<label for="firstTrainTime">First Train Time (HH:mm) military time</label>
+							<input type="number" class="form-control" id="firstTrainTime">
+						</div>
+						<div class="form-group">
+							<label for="trainFrequency">Frequency (in minutes)</label>
+							<input type="number" class="form-control" id="trainFrequency">
+						</div>
+						<button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
+
+</script>
 </html>
