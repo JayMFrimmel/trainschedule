@@ -162,9 +162,35 @@
 
 		// Replaces content in the "Add a Train" form
 		$("#addATrain").empty();
-		
 
-	}
+		// put all new info in the relevant categories
+		$("#addATrain").append("<h1>" + trainName);
+		$("#addATrain").append("<h4>" + trainDestination);
+		$("#addATrain").append("<h4>" + firstTrainTime);
+		$("#addATrain").append("<h4>" + trainFrequency);
+
+		// clear localStorage
+		localStorage.clear();
+
+		// store all content into local storage
+		localStorage.setItem("trainName", trainName);
+		localStorage.setItem("trainDestination", trainDestination);
+		localStorage.setItem("firstTrainTime", firstTrainTime);
+		localStorage.setItem("trainFrequency", trainFrequency);
+
+		// don't refresh the page
+		return false;
+
+	});
+
+	// by default display the content from local storage
+		$("#addATrain").empty();
+		$("#addATrain").append("<h1>" + localStorage.getItem("trainName"));
+		$("#addATrain").append("<h4>" + localStorage.getItem("trainDestination"));
+		$("#addATrain").append("<h4>" + localStorage.getItem("firstTrainTime"));
+		$("#addATrain").append("<h4>" + localStorage.getItem("trainFrequency"));
+	// <--------------------------------------------
+	
 </script>
 </body>
 
