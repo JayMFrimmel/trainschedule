@@ -57,36 +57,36 @@
 				<tr>
 					<td>Trojan Special</td>
 					<td>Greensboro</td>
-					<td>53</td>
+					<td>75</td>
 					<td>1630</td>
-					<td></td>
+					<td>14</td>
 				</tr>
 				<tr>
 					<td>Tarheel Express</td>
 					<td>Chapel Hill</td>
+					<td>45</td>
+					<td>1425</td>
 					<td>25</td>
-					<td></td>
-					<td></td>
 				</tr>
 				<tr>
 					<td>Blue Devil</td>
 					<td>Durham</td>
-					<td>26</td>
-					<td></td>
-					<td></td>
+					<td>60</td>
+					<td>1510</td>
+					<td>05</td>
 				</tr>
 				<tr>
 					<td>Sea Hawk Special</td>
 					<td>Wilmington</td>
 					<td>150</td>
-					<td></td>
-					<td></td>
+					<td>1800</td>
+					<td>33</td>
 				</tr>
 				<tr>
 					<td>Broncos Limited</td><td>Fayetteville</td>
-					<td>102</td>
-					<td></td>
-					<td></td>
+					<td>220</td>
+					<td>1735</td>
+					<td>105</td>
 				</tr>
 				<tr>
 					<td>Wolfpack Howler</td>
@@ -142,11 +142,8 @@
 <script src="https://code.jquery.com/jquery.js">
 </script>
 
-<script>
-
-// Initialize Firebase
-
-<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"</script>
 <script>
   // Initialize Firebase
   var config = {
@@ -191,10 +188,10 @@ var trainFrequency = "";
 		//Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
 		dataRef.ref().on("child_added", function(childSnapshot) {
 
-		console.log(trainName);
-		console.log(trainDestination);
-		console.log(firstTrainTime);
-		console.log(trainFrequency);
+		console.log(childSnapshot.val().trainName);
+		console.log(childSnapshot.val().trainDestination);
+		console.log(childSnapshot.val().firstTrainTime);
+		console.log(childSnapshot.val().trainFrequency);
 
 		// Replaces content in the "Add a Train" form
 		$("#addATrain").empty();
